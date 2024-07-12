@@ -51,16 +51,23 @@
 // const dragonsTag: MaybePopularTag = null;
 // Types 
 // Void
-var doSomething = function () {
-    console.log("Do something");
-};
-//Any
-var anyVar = undefined;
-// Never
-var doSomething2 = function () {
-    throw 'never';
-};
-// Unknown
-// Works like any but we cannot assign it to another type, unless we assert
-var varUnknown = 10;
-var strT = varUnknown;
+// const doSomething = (): void => {
+//     console.log("Do something")
+// }
+// //Any
+// let anyVar: any = undefined;
+// // Never
+// const doSomething2 = (): never => {
+//     throw 'never';
+// }
+// // Unknown
+// // Works like any but we cannot assign it to another type, unless we assert
+// let varUnknown: unknown = 10;
+// let strT: string = varUnknown as string;
+var someElement = document.querySelector('.foo');
+console.log("someElement", someElement.value);
+var someElement2 = document.querySelector('.foo');
+someElement2.addEventListener('click', function (event) {
+    var target = event.target;
+    console.log('event', target.value);
+});

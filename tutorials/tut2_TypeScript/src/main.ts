@@ -66,19 +66,28 @@
 
 // Types 
 // Void
-const doSomething = (): void => {
-    console.log("Do something")
-}
+// const doSomething = (): void => {
+//     console.log("Do something")
+// }
 
-//Any
-let anyVar: any = undefined;
+// //Any
+// let anyVar: any = undefined;
 
-// Never
-const doSomething2 = (): never => {
-    throw 'never';
-}
+// // Never
+// const doSomething2 = (): never => {
+//     throw 'never';
+// }
 
-// Unknown
-// Works like any but we cannot assign it to another type, unless we assert
-let varUnknown: unknown = 10;
-let strT: string = varUnknown as string;
+// // Unknown
+// // Works like any but we cannot assign it to another type, unless we assert
+// let varUnknown: unknown = 10;
+// let strT: string = varUnknown as string;
+
+const someElement = document.querySelector('.foo') as HTMLInputElement;
+
+console.log("someElement", someElement.value);
+const someElement2 = document.querySelector('.foo');
+someElement2.addEventListener('click',(event)=>{
+    const target=event.target as HTMLInputElement;
+    console.log('event',target.value);
+});
