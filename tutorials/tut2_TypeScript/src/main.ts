@@ -83,11 +83,45 @@
 // let varUnknown: unknown = 10;
 // let strT: string = varUnknown as string;
 
-const someElement = document.querySelector('.foo') as HTMLInputElement;
+// const someElement = document.querySelector('.foo') as HTMLInputElement;
 
-console.log("someElement", someElement.value);
-const someElement2 = document.querySelector('.foo');
-someElement2.addEventListener('click',(event)=>{
-    const target=event.target as HTMLInputElement;
-    console.log('event',target.value);
-});
+// console.log("someElement", someElement.value);
+// const someElement2 = document.querySelector('.foo');
+// someElement2.addEventListener('click',(event)=>{
+//     const target=event.target as HTMLInputElement;
+//     console.log('event',target.value);
+// });
+
+// Classes
+interface UserInterface {
+    getFullName(): string
+}
+class User implements UserInterface {
+    private fistName: string
+    protected lastName: string
+    readonly dfunknown: string
+    static readonly maxAge = 50;
+    constructor(firstName: string, lastName: string) {
+        this.fistName = firstName;
+        this.lastName = lastName;
+        this.dfunknown = firstName;
+    }
+
+    getFullName(): string {
+        return this.fistName + ' ' + this.lastName
+    }
+}
+
+class Admin extends User {
+    private editor: string
+    setEditor(editor: string): void {
+        this.editor = editor
+    }
+
+    getEditor(): string {
+        return this.editor
+    }
+}
+
+const user = new User("fez", "187");
+const admin = new Admin('fooo', 'bar')

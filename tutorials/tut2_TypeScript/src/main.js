@@ -1,73 +1,45 @@
 // // Variables
 // const hello = 'wolrd';
 // let strHello = 'world';
-// //Specify type
-// let intNumber: number = 3;
-// // Functions
-// const getFullName = (name: string, surname: string): string => {
-//     return name + ' ' + surname;
-// }
-// getFullName("Katlego", "Maredi");
-// // Objects
-// const userObj: { name: string, age: number } = {
-//     name: "Moster",
-//     age: 30
-// }
-// const userObj2: { name: string, age: number } = {
-//     name: "Moster",
-//     age: 30
-// }
-// // Interfaces
-// interface User {
-//     name: string
-//     age?: number
-//     //Use '?' to indicate that it is not required
-//     getMessage(): string
-// }
-// const userObj3: User = {
-//     name: "Fez",
-//     age: 23,
-//     getMessage() {
-//         return "Hello " + name
-//     },
-// }
-// console.log(userObj3.age, userObj3.name,userObj3.getMessage());
-// // Union operator
-// interface UserInterace {
-//     name: string
-//     surname: string
-//     age: number
-// }
-// let username: string = 'fez';
-// let pageName: string | number = '1';
-// let errMsg: string | null = null;
-// let user: UserInterace | null = null;
-// // Type alises
-// type ID = string;
-// type PopularTag = string;
-// type MaybePopularTag = PopularTag | null;
-// let id: ID = 'Fax';
-// const popularTag: PopularTag[] = ["Dragon", "Coffe"];
-// const dragonsTag: MaybePopularTag = null;
-// Types 
-// Void
-// const doSomething = (): void => {
-//     console.log("Do something")
-// }
-// //Any
-// let anyVar: any = undefined;
-// // Never
-// const doSomething2 = (): never => {
-//     throw 'never';
-// }
-// // Unknown
-// // Works like any but we cannot assign it to another type, unless we assert
-// let varUnknown: unknown = 10;
-// let strT: string = varUnknown as string;
-var someElement = document.querySelector('.foo');
-console.log("someElement", someElement.value);
-var someElement2 = document.querySelector('.foo');
-someElement2.addEventListener('click', function (event) {
-    var target = event.target;
-    console.log('event', target.value);
-});
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var User = /** @class */ (function () {
+    function User(firstName, lastName) {
+        this.fistName = firstName;
+        this.lastName = lastName;
+        this.dfunknown = firstName;
+    }
+    User.prototype.getFullName = function () {
+        return this.fistName + ' ' + this.lastName;
+    };
+    User.maxAge = 50;
+    return User;
+}());
+var Admin = /** @class */ (function (_super) {
+    __extends(Admin, _super);
+    function Admin() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Admin.prototype.setEditor = function (editor) {
+        this.editor = editor;
+    };
+    Admin.prototype.getEditor = function () {
+        return this.editor;
+    };
+    return Admin;
+}(User));
+var user = new User("fez", "187");
+var admin = new Admin('fooo', 'bar');
