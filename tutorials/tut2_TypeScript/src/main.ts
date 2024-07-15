@@ -127,31 +127,52 @@
 // const admin = new Admin('fooo', 'bar')
 
 // Generics interfaces and functions in typescript
-const addId = <T extends object>(obj: T) => {
-    const id = Math.random().toString(16);
-    return {
-        ...obj,
-        id
-    }
+// const addId = <T extends object>(obj: T) => {
+//     const id = Math.random().toString(16);
+//     return {
+//         ...obj,
+//         id
+//     }
+// }
+
+// interface UserInterace<T,V> {
+//     name: string
+//     data:T;
+//     meta:V;
+// }
+
+// const user: UserInterace<{meta:string},string> = {
+//     name: "Jack",
+//     data:{
+//         meta:"Fez"
+//     },
+//     meta:'Keistine'
+// }
+
+// const user2:UserInterace<string[]>={
+//     name:'fez',
+//     data:['wildheart','something']
+// }
+// const result = addId<UserInterace>(user);
+// console.log('result', result);
+
+// Enums
+// const statuses={
+//     notStarted:0,
+//     inProgress:1,
+//     done:2
+// }
+
+enum StatusEnum {
+    NotStarted = 'not started',
+    InProgress = 'In progress',
+    Done = 'DOne'
 }
 
-interface UserInterace<T,V> {
-    name: string
-    data:T;
-    meta:V;
+interface Task {
+    id: string;
+    status: StatusEnum
 }
 
-const user: UserInterace<{meta:string},string> = {
-    name: "Jack",
-    data:{
-        meta:"Fez"
-    },
-    meta:'Keistine'
-}
-
-const user2:UserInterace<string[]>={
-    name:'fez',
-    data:['wildheart','something']
-}
-const result = addId<UserInterace>(user);
-console.log('result', result);
+let notStartedStat: StatusEnum = StatusEnum.NotStarted;
+console.log(StatusEnum.InProgress);

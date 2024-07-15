@@ -1,17 +1,6 @@
 // // Variables
 // const hello = 'wolrd';
 // let strHello = 'world';
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 // //Specify type
 // let intNumber: number = 3;
 // // Functions
@@ -112,20 +101,42 @@ var __assign = (this && this.__assign) || function () {
 // const user = new User("fez", "187");
 // const admin = new Admin('fooo', 'bar')
 // Generics interfaces and functions in typescript
-var addId = function (obj) {
-    var id = Math.random().toString(16);
-    return __assign(__assign({}, obj), { id: id });
-};
-var user = {
-    name: "Jack",
-    data: {
-        meta: "Fez"
-    },
-    meta: 'Keistine'
-};
-var user2 = {
-    name: 'fez',
-    data: ['wildheart', 'something']
-};
-var result = addId(user);
-console.log('result', result);
+// const addId = <T extends object>(obj: T) => {
+//     const id = Math.random().toString(16);
+//     return {
+//         ...obj,
+//         id
+//     }
+// }
+// interface UserInterace<T,V> {
+//     name: string
+//     data:T;
+//     meta:V;
+// }
+// const user: UserInterace<{meta:string},string> = {
+//     name: "Jack",
+//     data:{
+//         meta:"Fez"
+//     },
+//     meta:'Keistine'
+// }
+// const user2:UserInterace<string[]>={
+//     name:'fez',
+//     data:['wildheart','something']
+// }
+// const result = addId<UserInterace>(user);
+// console.log('result', result);
+// Enums
+// const statuses={
+//     notStarted:0,
+//     inProgress:1,
+//     done:2
+// }
+var StatusEnum;
+(function (StatusEnum) {
+    StatusEnum["NotStarted"] = "not started";
+    StatusEnum["InProgress"] = "In progress";
+    StatusEnum["Done"] = "DOne";
+})(StatusEnum || (StatusEnum = {}));
+var notStartedStat = StatusEnum.NotStarted;
+console.log(StatusEnum.InProgress);
