@@ -93,35 +93,55 @@
 // });
 
 // Classes
-interface UserInterface {
-    getFullName(): string
+// interface UserInterface {
+//     getFullName(): string
+// }
+// class User implements UserInterface {
+//     private fistName: string
+//     protected lastName: string
+//     readonly dfunknown: string
+//     static readonly maxAge = 50;
+//     constructor(firstName: string, lastName: string) {
+//         this.fistName = firstName;
+//         this.lastName = lastName;
+//         this.dfunknown = firstName;
+//     }
+
+//     getFullName(): string {
+//         return this.fistName + ' ' + this.lastName
+//     }
+// }
+
+// class Admin extends User {
+//     private editor: string
+//     setEditor(editor: string): void {
+//         this.editor = editor
+//     }
+
+//     getEditor(): string {
+//         return this.editor
+//     }
+// }
+
+// const user = new User("fez", "187");
+// const admin = new Admin('fooo', 'bar')
+
+// Generics interfaces and functions in typescript
+const addId = <T extends object>(obj: T) => {
+    const id = Math.random().toString(16);
+    return {
+        ...obj,
+        id
+    }
 }
-class User implements UserInterface {
-    private fistName: string
-    protected lastName: string
-    readonly dfunknown: string
-    static readonly maxAge = 50;
-    constructor(firstName: string, lastName: string) {
-        this.fistName = firstName;
-        this.lastName = lastName;
-        this.dfunknown = firstName;
-    }
 
-    getFullName(): string {
-        return this.fistName + ' ' + this.lastName
-    }
+interface UserInterace {
+    name: string
 }
 
-class Admin extends User {
-    private editor: string
-    setEditor(editor: string): void {
-        this.editor = editor
-    }
-
-    getEditor(): string {
-        return this.editor
-    }
+const user: UserInterace = {
+    name: "Jack"
 }
 
-const user = new User("fez", "187");
-const admin = new Admin('fooo', 'bar')
+const result = addId<UserInterace>(user);
+console.log('result', result);
