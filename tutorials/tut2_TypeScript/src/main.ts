@@ -135,13 +135,21 @@ const addId = <T extends object>(obj: T) => {
     }
 }
 
-interface UserInterace {
+interface UserInterace<T> {
     name: string
+    data:T;
 }
 
-const user: UserInterace = {
-    name: "Jack"
+const user: UserInterace<{meta:string}> = {
+    name: "Jack",
+    data:{
+        meta:"Fez"
+    }
 }
 
+const user2:UserInterace<string[]>={
+    name:'fez',
+    data:['wildheart','something']
+}
 const result = addId<UserInterace>(user);
 console.log('result', result);
