@@ -135,16 +135,18 @@ const addId = <T extends object>(obj: T) => {
     }
 }
 
-interface UserInterace<T> {
+interface UserInterace<T,V> {
     name: string
     data:T;
+    meta:V;
 }
 
-const user: UserInterace<{meta:string}> = {
+const user: UserInterace<{meta:string},string> = {
     name: "Jack",
     data:{
         meta:"Fez"
-    }
+    },
+    meta:'Keistine'
 }
 
 const user2:UserInterace<string[]>={

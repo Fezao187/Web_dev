@@ -120,7 +120,8 @@ var user = {
     name: "Jack",
     data: {
         meta: "Fez"
-    }
+    },
+    meta: 'Keistine'
 };
 var user2 = {
     name: 'fez',
