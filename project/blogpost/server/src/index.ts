@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 import { config } from "dotenv";
 import cookieParser from "cookie-parser";
-
+import appRoute from "./routes/AppRoutes.js";
 config();
 const app = express();
 const { MONGO_URL, PORT } = process.env;
@@ -17,6 +17,7 @@ app.use(cors({
 }));
 
 app.use(cookieParser());
+app.use("/", appRoute);
 
 // Connect to atlas
 mongoose
