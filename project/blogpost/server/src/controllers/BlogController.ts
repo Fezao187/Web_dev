@@ -25,10 +25,13 @@ export const CreateBlog = async (
             creator?: mongoose.Types.ObjectId
         }
 
+        const user = req.body.user;
         // Create blog interface
         const blogObj: BlogInterface = {
             title: req.body.title,
-            body: req.body.body
+            body: req.body.body,
+            username: user.username,
+            creator: user._id
         }
 
         // Save blogposts to DB
