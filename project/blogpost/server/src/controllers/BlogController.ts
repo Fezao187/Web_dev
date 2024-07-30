@@ -43,3 +43,24 @@ export const CreateBlog = async (
         console.log(error.message);
     }
 }
+
+// Get blog post
+export const getBlogpostById = async (
+    req: express.Request,
+    res: express.Response,
+    next: express.NextFunction
+) => {
+    try {
+        // Get ID from params
+        const { id } = req.params;
+        // FInd nlogpost by ID
+        const blog = await Blogpost.findById(id);
+        res.status(201)
+            .json(blog);
+        next();
+    } catch (error) {
+        console.log(error.message);
+        res.status(500)
+            .send({ message: error.message });
+    }
+}
