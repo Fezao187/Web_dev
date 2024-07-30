@@ -64,3 +64,23 @@ export const getBlogpostById = async (
             .send({ message: error.message });
     }
 }
+
+// Get all blogs
+export const getAllBlogs = async (
+    req: express.Request,
+    res: express.Response,
+    next: express.NextFunction
+) => {
+    try {
+        // Get all blogposts
+        const blogs=await Blogpost.find({});
+        res.status(201)
+        .json({
+            message:"All blogs retrived",
+            data: blogs
+        });
+        next();
+    } catch (error) {
+        console.log(error.message);
+    }
+}
