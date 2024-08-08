@@ -85,6 +85,25 @@ export const getAllBlogs = async (
     }
 }
 
+// Get User blogs
+export const getUserBlogs = async (
+    req: express.Request,
+    res: express.Response,
+    next: express.NextFunction
+) => {
+    try {
+        const blogs = await Blogpost.find({ creator: req.body.user.id });
+        res.status(200)
+            .json({
+                message: "Retrived all my blogposts",
+                blogs
+            });
+        next();
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 // Edit blog
 export const editBlog = async (
     req: express.Request,

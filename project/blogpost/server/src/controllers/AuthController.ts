@@ -28,7 +28,8 @@ export const Signup = async (
             .json({
                 message: "User signed up successfully",
                 success: true,
-                user
+                user,
+                token
             });
         next();
     } catch (error) {
@@ -64,7 +65,9 @@ export const Login = async (
         res.status(201)
             .json({
                 message: "User logged in successfully",
-                success: true
+                success: true,
+                user,
+                token
             });
         next();
     } catch (error) {
