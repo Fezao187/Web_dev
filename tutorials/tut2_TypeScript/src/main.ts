@@ -39,7 +39,7 @@
 //     },
 // }
 
-// console.log(userObj3.age, userObj3.name,userObj3.getMessage());
+// console.log(userObj3.age, userObj3.name, userObj3.getMessage());
 
 // // Union operator
 // interface UserInterace {
@@ -64,8 +64,8 @@
 // const popularTag: PopularTag[] = ["Dragon", "Coffe"];
 // const dragonsTag: MaybePopularTag = null;
 
-// Types 
-// Void
+// // Types 
+// // Void
 // const doSomething = (): void => {
 //     console.log("Do something")
 // }
@@ -87,12 +87,12 @@
 
 // console.log("someElement", someElement.value);
 // const someElement2 = document.querySelector('.foo');
-// someElement2.addEventListener('click',(event)=>{
-//     const target=event.target as HTMLInputElement;
-//     console.log('event',target.value);
+// someElement2.addEventListener('click', (event) => {
+//     const target = event.target as HTMLInputElement;
+//     console.log('event', target.value);
 // });
 
-// Classes
+// // Classes
 // interface UserInterface {
 //     getFullName(): string
 // }
@@ -126,7 +126,7 @@
 // const user = new User("fez", "187");
 // const admin = new Admin('fooo', 'bar')
 
-// Generics interfaces and functions in typescript
+// // Generics interfaces and functions in typescript
 // const addId = <T extends object>(obj: T) => {
 //     const id = Math.random().toString(16);
 //     return {
@@ -135,44 +135,44 @@
 //     }
 // }
 
-// interface UserInterace<T,V> {
+// interface UserInterace<T, V> {
 //     name: string
-//     data:T;
-//     meta:V;
+//     data: T;
+//     meta: V;
 // }
 
-// const user: UserInterace<{meta:string},string> = {
+// const user: UserInterace<{ meta: string }, string> = {
 //     name: "Jack",
-//     data:{
-//         meta:"Fez"
+//     data: {
+//         meta: "Fez"
 //     },
-//     meta:'Keistine'
+//     meta: 'Keistine'
 // }
 
-// const user2:UserInterace<string[]>={
-//     name:'fez',
-//     data:['wildheart','something']
+// const user2: UserInterace<string[]> = {
+//     name: 'fez',
+//     data: ['wildheart', 'something']
 // }
 // const result = addId<UserInterace>(user);
 // console.log('result', result);
 
-// Enums
-// const statuses={
-//     notStarted:0,
-//     inProgress:1,
-//     done:2
+// // Enums
+// const statuses = {
+//     notStarted: 0,
+//     inProgress: 1,
+//     done: 2
 // }
 
-enum StatusEnum {
-    NotStarted = 'not started',
-    InProgress = 'In progress',
-    Done = 'DOne'
-}
+// enum StatusEnum {
+//     NotStarted = 'not started',
+//     InProgress = 'In progress',
+//     Done = 'DOne'
+// }
 
-interface Task {
-    id: string;
-    status: StatusEnum
-}
+// interface Task {
+//     id: string;
+//     status: StatusEnum
+// }
 
-let notStartedStat: StatusEnum = StatusEnum.NotStarted;
-console.log(StatusEnum.InProgress);
+// let notStartedStat: StatusEnum = StatusEnum.NotStarted;
+// console.log(StatusEnum.InProgress);
