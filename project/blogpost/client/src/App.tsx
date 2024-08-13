@@ -1,10 +1,13 @@
+import React from 'react';
 import './App.css';
+import Nav from './components/Nav';
 
 function App() {
   return (
-    <h1 className='text-3xl font-bold underline text-red-600'>
-      Simple React TypeScript Tailwind Simple.
-    </h1>
+    <>
+    <Nav/>
+    <div className='bg-indigo-600 w-full h-screen'></div>
+    </>
   );
 }
 
