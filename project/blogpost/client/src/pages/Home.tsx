@@ -6,7 +6,9 @@ type Props = {}
 const Home = (props: Props) => {
     return (
         <>
-            <BlogsContainer />
+            <div className='pt-[90px] bg-indigo-600 w-full h-screen'>
+                <BlogsContainer />
+            </div>
         </>
     )
 }

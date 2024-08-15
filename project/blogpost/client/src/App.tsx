@@ -29,7 +29,6 @@ function App() {
           <Route path='/:id' element={<ViewBlog />} />
           <Route path='/:id' element={<DeleteBlog />} />
         </Routes>
-      {/* <div className='bg-indigo-600 w-full h-screen'></div> */}
     </>
   );
 }
