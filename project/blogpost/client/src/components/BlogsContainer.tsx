@@ -12,7 +12,7 @@ const BlogsContainer = (props: Props) => {
             <div className='my-auto w-[700px] outline'>Name</div>
           </div>
           <div className='h-[55px] outline flex'>
-            <h1 className='my-auto outline'>Titlfrfrfrrfrfrfrfrfrfrfrfrfrrfrfrfrre</h1>
+            <h1 className='my-auto outline'>Title</h1>
           </div>
           <div>Blogs</div>
         </div>
